@@ -1,0 +1,12 @@
+{
+  "name": "yasno-todo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ясно — список задач на HTML, CSS и JavaScript",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "check": "node --check dist/app.js",
+    "test": "playwright test"
+  },
+  "devDependencies": { "@playwright/test": "1.56.1" }
+}

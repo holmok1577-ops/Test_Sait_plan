@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#285748">
+  <meta name="description" content="Ясно — простой список задач. Освободите голову, запишите главное и двигайтесь в своём темпе.">
+  <title>Ясно — список задач</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="header"><a class="brand" href="./" aria-label="Ясно — главная"><span class="brand-icon">✓</span> ясно<span class="brand-dot">.</span></a><span class="header-note">Меньше шума. Больше сделанного.</span></header>
+    <main>
+      <div class="intro"><p class="eyebrow">ВАШЕ ПРОСТРАНСТВО ДЛЯ ВАЖНОГО</p><h1>Всё начинается<br>с <em>одного дела.</em></h1><p class="subtitle">Освободите голову. Запишите задачи.<br class="mobile-break"> Двигайтесь в своём темпе.</p></div>
+      <section class="workspace" aria-labelledby="tasks-title">
+        <div class="workspace-heading"><div><p class="eyebrow">ШАГ ЗА ШАГОМ</p><h2 id="tasks-title">Мои задачи</h2></div><span class="date" id="date"></span></div>
+        <form id="task-form" novalidate><label class="sr-only" for="task-input">Новая задача</label><div class="input-row"><input id="task-input" maxlength="300" placeholder="Что хочется сделать?" autocomplete="off" aria-describedby="input-error"><button class="add-button" type="submit"><span aria-hidden="true">＋</span> Добавить</button></div><p id="input-error" class="error" role="alert" hidden></p></form>
+        <div class="list-toolbar"><div class="filters" role="group" aria-label="Фильтр задач"><button type="button" data-filter="all" aria-pressed="true">Все <span id="all-count">0</span></button><button type="button" data-filter="active" aria-pressed="false">В работе</button><button type="button" data-filter="completed" aria-pressed="false">Готово</button></div><span class="task-caption">Маленькие шаги считаются</span></div>
+        <ul id="task-list" aria-label="Список задач"></ul>
+        <div id="empty-state" class="empty-state"><div class="empty-icon" aria-hidden="true">✓</div><h3 id="empty-title">Место для новых планов</h3><p id="empty-description">Добавьте первое дело — и день станет чуть яснее.</p></div>
+        <div class="progress-footer"><span id="progress-text">Ваш следующий шаг — первая задача</span><div class="progress-track" role="progressbar" aria-label="Выполненные задачи" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div></div>
+      </section>
+      <p id="storage-warning" class="storage-warning" role="alert" hidden></p>
+      <p class="local-note"><span aria-hidden="true">◇</span> <span id="save-note">Задачи сохраняются в этом браузере</span></p>
+      <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="footer"><span>Ясно — и по делу.</span><span>Не всё сразу. Одно за другим.</span></footer>
+  </div>
+</body>
+</html>
